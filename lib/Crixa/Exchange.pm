@@ -1,6 +1,6 @@
 package Crixa::Exchange;
 {
-  $Crixa::Exchange::VERSION = '0.01';
+  $Crixa::Exchange::VERSION = '0.02';
 }
 use 5.10.0;
 use Moose;
@@ -53,7 +53,7 @@ Crixa::Exchange
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

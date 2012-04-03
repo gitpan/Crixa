@@ -1,6 +1,6 @@
 package Crixa::Queue;
 {
-  $Crixa::Queue::VERSION = '0.01';
+  $Crixa::Queue::VERSION = '0.02';
 }
 use 5.10.0;
 use Moose;
@@ -57,7 +57,7 @@ Crixa::Queue
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

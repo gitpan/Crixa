@@ -1,6 +1,6 @@
 package Crixa;
 {
-  $Crixa::VERSION = '0.01';
+  $Crixa::VERSION = '0.02';
 }
 use Moose;
 use namespace::autoclean;
@@ -69,7 +69,7 @@ Crixa
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS 
 
