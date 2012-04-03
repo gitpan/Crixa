@@ -1,0 +1,550 @@
+=head2 Mon Mar 26 06:32:22 2012: C<Module> L<App::local::lib::helper|App::local::lib::helper>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.07>
+
+=item *
+
+C<EXE_FILES: script/local-lib-helper>
+
+=back
+
+=head2 Mon Mar 26 06:34:14 2012: C<Module> L<String::Truncate|String::Truncate>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.100600>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:34:28 2012: C<Module> L<Pod::Elemental|Pod::Elemental>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.102361>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:34:50 2012: C<Module> L<Pod::Weaver|Pod::Weaver>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.101635>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:35:05 2012: C<Module> L<CPAN::Meta|CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.120630>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:35:16 2012: C<Module> L<Module::Implementation|Module::Implementation>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:35:18 2012: C<Module> L<Class::Load|Class::Load>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:35:22 2012: C<Module> L<Config::MVP|Config::MVP>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.200002>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:35:46 2012: C<Module> L<Moose|Moose>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.0402>
+
+=item *
+
+C<EXE_FILES: bin/moose-outdated>
+
+=back
+
+=head2 Mon Mar 26 06:36:39 2012: C<Module> L<Dist::Zilla|Dist::Zilla>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.300010>
+
+=item *
+
+C<EXE_FILES: bin/dzil>
+
+=back
+
+=head2 Mon Mar 26 06:36:51 2012: C<Module> L<MooseX::Types::Common|MooseX::Types::Common>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.001007>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:36:57 2012: C<Module> L<MooseX::AttributeShortcuts|MooseX::AttributeShortcuts>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:37:38 2012: C<Module> L<Pod::Elemental::PerlMunger|Pod::Elemental::PerlMunger>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.093331>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:37:40 2012: C<Module> L<Dist::Zilla::Plugin::PodWeaver|Dist::Zilla::Plugin::PodWeaver>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.101641>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Mar 26 06:39:16 2012: C<Module> L<Net::RabbitMQ|Net::RabbitMQ>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.2.2>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 01:58:02 2012: C<Module> L<Test::LeakTrace|Test::LeakTrace>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.14>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 01:58:05 2012: C<Module> L<Hash::FieldHash|Hash::FieldHash>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.12>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 01:58:07 2012: C<Module> L<Sort::Naturally|Sort::Naturally>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 01:58:15 2012: C<Module> L<Data::Printer|Data::Printer>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.3>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 02:55:16 2012: C<Module> L<Carp::Always|Carp::Always>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.10>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 04:43:31 2012: C<Module> L<Digest::SHA1|Digest::SHA1>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 04:43:39 2012: C<Module> L<UUID::Tiny|UUID::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 05:42:03 2012: C<Module> L<Pod::Elemental::Transformer::List|Pod::Elemental::Transformer::List>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.101620>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 06:26:30 2012: C<Module> L<Pod::Coverage::TrustPod|Pod::Coverage::TrustPod>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.100001>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Wed Mar 28 06:49:35 2012: C<Module> L<Test::Net::RabbitMQ|Test::Net::RabbitMQ>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

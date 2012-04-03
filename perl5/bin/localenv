@@ -1,0 +1,13 @@
+#!/usr/local/perlbrew/perls/perl-5.14.2/bin/perl
+
+use strict;
+use warnings;
+
+use lib '/Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5';
+use local::lib '/Users/perigrin/dev/tamarou/Crixa/perl5';
+
+unless ( caller ) {
+    if ( @ARGV ) {
+        exec @ARGV;
+    }
+}

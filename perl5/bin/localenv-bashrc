@@ -1,0 +1,1 @@
+eval $(/usr/local/perlbrew/perls/perl-5.14.2/bin/perl -I/Users/perigrin/dev/tamarou/Crixa/perl5/lib/perl5 -Mlocal::lib=/Users/perigrin/dev/tamarou/Crixa/perl5)
