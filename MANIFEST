@@ -20,9 +20,11 @@ eg/send.pl
 eg/worker.pl
 lib/Crixa.pm
 lib/Crixa/Channel.pm
+lib/Crixa/Engine.pm
+lib/Crixa/Engine/API.pm
+lib/Crixa/Engine/RabbitMQ.pm
 lib/Crixa/Exchange.pm
 lib/Crixa/Queue.pm
-lib/Crixa/Role/RabbitMQ.pm
 t/00-compile.t
 t/01_synopsis.t
 t/01_synopsis_live.t

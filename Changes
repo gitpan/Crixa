@@ -1,3 +1,56 @@
-Revision history for {{$dist->name}}
+Changelog for Crixa
 
-{{$NEXT}}
+0.03 2012-04-10T22:31:26
+ [Chris Prather <chris@prather.org>]
+ - we just need to exclude ^perl5
+
+ - Refactor the RabbitMQ Role into a Class
+   
+   We need to be able to easily subclass this, and provide it as an
+   implementation ot the various internals. This is so we can build out
+   different Async backends and (potentially) replace RabbitMQ with
+   anything else that supports a similar API.
+
+ - update dist.ini to generate Changes
+
+
+0.02 2012-04-03T08:25:50
+ [Chris Prather <chris@prather.org>]
+ - exclude stuff that we accidentally released in 0.01
+
+ - move to the Git NextVersion plugin
+
+
+0.01 2012-04-03T08:01:01
+ [Chris Prather <chris@prather.org>]
+ - add Crixa-* to gitignore
+
+ - add gitignore
+
+ - rename CRIXA_HOST to RABBITMQ_HOST in live tests
+
+ - clean up a little cruft
+
+ - make live tests *more* optional
+
+ - add some simple tests
+
+ - add some more pod stubs and some test stubs
+
+ - add inital pod
+
+ - kill podweaver
+
+ - fix a small potential bug
+
+ - finish adding the examples from RabbitMQ
+
+ - sweeping updates as we port the RabbitMQ examples over
+
+ - add README.md
+
+ - initial draft
+
+ - initial commit
+
+

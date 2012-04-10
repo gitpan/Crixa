@@ -1,11 +1,11 @@
-package Crixa::Role::RabbitMQ;
+package Crixa::Engine::RabbitMQ;
 {
-  $Crixa::Role::RabbitMQ::VERSION = '0.02';
+  $Crixa::Engine::RabbitMQ::VERSION = '0.03';
 }
-use Moose::Role;
+use Moose;
 use namespace::autoclean;
 
-# ABSTRACT: A Role for managing the RabbitMQ instance
+# ABSTRACT: A Class for managing the RabbitMQ instance
 
 use Net::RabbitMQ;
 
@@ -16,7 +16,7 @@ sub _build__mq { Net::RabbitMQ->new; }
 sub _connect_mq {
     my ( $self, $config ) = @_;
     my @args = ( $config->host );
-    if ( $_[0]->user && $config->password ) {
+    if ( $config->user && $config->password ) {
         push @args => {
             user     => $config->user,
             password => $config->password
@@ -26,16 +26,10 @@ sub _connect_mq {
     $self->_mq->connect(@args);
 }
 
+with qw(Crixa::Engine::API);    # at the end so we pick up _mq
+
 1;
 __END__
-
-=head1 NAME
-
-Crixa::Role::RabbitMQ
-
-=head1 VERSION
-
-version 0.02
 
 =head1 DESCRIPTION
 

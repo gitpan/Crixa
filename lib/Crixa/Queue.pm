@@ -1,6 +1,6 @@
 package Crixa::Queue;
 {
-  $Crixa::Queue::VERSION = '0.02';
+  $Crixa::Queue::VERSION = '0.03';
 }
 use 5.10.0;
 use Moose;
@@ -8,7 +8,7 @@ use namespace::autoclean;
 
 # ABSTRACT: A Crixa Queue
 
-with qw(Crixa::Role::RabbitMQ);
+with qw(Crixa::Engine);
 
 has name => (
     isa    => 'Str',
@@ -57,7 +57,7 @@ Crixa::Queue
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 DESCRIPTION
 
