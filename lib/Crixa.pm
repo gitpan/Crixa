@@ -1,6 +1,6 @@
 package Crixa;
 {
-  $Crixa::VERSION = '0.03';
+  $Crixa::VERSION = '0.04';
 }
 use Moose;
 use namespace::autoclean;
@@ -56,6 +56,7 @@ sub channel {
 }
 
 sub queue      { shift->channel->queue(@_); }
+sub exchange   { shift->channel->exchange(@_) }
 sub disconnect { shift->_mq->disconnect(); }
 sub DEMOLISH   { shift->disconnect; }
 
@@ -69,7 +70,7 @@ Crixa
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS 
 
@@ -99,6 +100,13 @@ was translating the tutorial examples to Perl so I could get a grasp on how
 different ideas would translate I found myself disliking the default
 L<Net::RabbitMQ> API. That isn't to say it's I<bad>, just really bare bones.
 So I went and wrote the API I wanted to use, influenced by he Pika examples.
+
+=head1 WARNING
+
+CRIXA IS ALPHA CODE. THE API MAY CHANGE.
+
+One of the planned changes is to add asyncronous communication with RabbitMQ
+and that *may* involve a lot of changes.
 
 =head1 ATTRIBUTES 
 
@@ -140,6 +148,10 @@ An optional password.
 
 Return the channel associated with C<$id>. If C<$id> isn't defined it returns
 a newly created channel.
+
+=head2 exchange(%args)
+
+Return a newly configured exchange. This will autovivify a channel.
 
 =head2 queue(%args)
 

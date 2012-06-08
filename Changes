@@ -1,6 +1,31 @@
 Changelog for Crixa
 
-0.03 2012-04-10T22:31:26
+0.04 2012-06-08T01:41:11
+ [Chris Prather <chris@prather.org>]
+ - fix a typo that Pod::Coverage caught just before release!
+
+ - add docs and an IO-Async example
+
+ - remove the channel calls we do not need anymore
+
+ - break out fetching the message from the queue
+   
+   apeiron didn't like the pure callback method, and there is no reason why
+   we should force it ... it's simple enough to break out the
+   wait_for_message and the check_for_message into seperate methods so
+   people can have access to every level that they want
+
+ - add exchange() method to Crixa.pm that allows us to hide the channel
+   enitrely if we want
+
+ - default queue bindings to an empty arrayref
+
+ - move fix a missing reference maker
+
+ - add the `$channel->ack()` to the callback.
+
+
+0.03 2012-04-10T22:07:53
  [Chris Prather <chris@prather.org>]
  - we just need to exclude ^perl5
 

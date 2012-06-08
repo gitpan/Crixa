@@ -1,6 +1,6 @@
 package Crixa::Exchange;
 {
-  $Crixa::Exchange::VERSION = '0.03';
+  $Crixa::Exchange::VERSION = '0.04';
 }
 use 5.10.0;
 use Moose;
@@ -25,11 +25,12 @@ sub BUILD {
 }
 
 around queue => sub {
-    my $next = shift;
-    my $self = shift;
+    my $next     = shift;
+    my $self     = shift;
     my $args     = @_ == 1 ? $_[0] : {@_};
-    my $bindings = delete $args->{bindings} // ('');
+    my $bindings = delete $args->{bindings} // [];
     my $q        = $self->$next($args);
+
     for my $binding (@$bindings) {
         $self->_mq->queue_bind( $self->channel->id, $q->name, $self->name,
             $binding );
@@ -53,7 +54,7 @@ Crixa::Exchange
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 DESCRIPTION
 

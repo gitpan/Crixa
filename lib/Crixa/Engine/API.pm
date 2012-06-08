@@ -1,6 +1,6 @@
 package Crixa::Engine::API;
 {
-  $Crixa::Engine::API::VERSION = '0.03';
+  $Crixa::Engine::API::VERSION = '0.04';
 }
 use Moose::Role;
 use namespace::autoclean;

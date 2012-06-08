@@ -1,6 +1,6 @@
 package Crixa::Engine::RabbitMQ;
 {
-  $Crixa::Engine::RabbitMQ::VERSION = '0.03';
+  $Crixa::Engine::RabbitMQ::VERSION = '0.04';
 }
 use Moose;
 use namespace::autoclean;

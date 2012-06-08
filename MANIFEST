@@ -9,6 +9,7 @@ dist.ini
 eg/emit_log.pl
 eg/emit_log_direct.pl
 eg/emit_log_topic.pl
+eg/io-async.pl
 eg/new_task.pl
 eg/receive.pl
 eg/receive_logs.pl
