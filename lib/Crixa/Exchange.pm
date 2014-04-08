@@ -1,12 +1,9 @@
 package Crixa::Exchange;
-{
-  $Crixa::Exchange::VERSION = '0.04';
-}
+# ABSTRACT: A Crixa Exchange
+$Crixa::Exchange::VERSION = '0.05';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
-
-# ABSTRACT: A Crixa Exchange
 
 with qw(Crixa::Engine);
 
@@ -54,7 +51,7 @@ Crixa::Exchange
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 DESCRIPTION
 

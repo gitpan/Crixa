@@ -1,11 +1,8 @@
 package Crixa::Channel;
-{
-  $Crixa::Channel::VERSION = '0.04';
-}
+# ABSTRACT: A Crixa Channel
+$Crixa::Channel::VERSION = '0.05';
 use Moose;
 use namespace::autoclean;
-
-# ABSTRACT: A Crixa Channel
 
 use Crixa::Queue;
 use Crixa::Exchange;
@@ -66,7 +63,7 @@ Crixa::Channel
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 DESCRIPTION
 

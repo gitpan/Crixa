@@ -1,11 +1,8 @@
 package Crixa;
-{
-  $Crixa::VERSION = '0.04';
-}
+# ABSTRACT: A Cleaner API for Net::RabbitMQ
+$Crixa::VERSION = '0.05';
 use Moose;
 use namespace::autoclean;
-
-# ABSTRACT: A Cleaner API for Net::RabbitMQ
 
 use Crixa::Channel;
 
@@ -20,6 +17,7 @@ sub connect {
 has host => ( isa => 'Str', is => 'ro', required => 1, );
 
 has [qw(user password)] => ( isa => 'Str', is => 'ro' );
+has [qw(port)] => ( isa => 'Int', is => 'ro' );
 
 has channel_id => (
     isa     => 'Int',
@@ -70,7 +68,7 @@ Crixa
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS 
 
