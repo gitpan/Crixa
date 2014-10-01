@@ -1,21 +1,24 @@
 ---
-abstract: 'A Cleaner API for Net::RabbitMQ'
+abstract: 'A Cleaner API for Net::AMQP::RabbitMQ'
 author:
   - 'Chris Prather <chris@prather.org>'
+  - 'Dave Rolsky <autarch@urth.org>'
 build_requires:
+  Exporter: '0'
+  ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   IO::Handle: '0'
   IPC::Open3: '0'
-  Test::More: '0'
+  Test::More: '0.98'
   Test::Net::RabbitMQ: '0.08'
   Test::Requires: '0.06'
-  Test::Simple: '0.98'
+  lib: '0'
   strict: '0'
   warnings: '0'
 configure_requires:
-  ExtUtils::MakeMaker: '6.30'
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,7 +27,12 @@ name: Crixa
 requires:
   Moose: '0'
   Moose::Role: '0'
-  Net::RabbitMQ: '0'
+  Net::AMQP::RabbitMQ: '0'
   namespace::autoclean: '0'
   perl: v5.10.0
-version: '0.05'
+resources:
+  bugtracker: https://github.com/Tamarou/Crixa/issues
+  repository: git://github.com/Tamarou/Crixa.git
+version: '0.06'
+x_contributors:
+  - 'Torsten Raudssus <torsten@raudss.us>'
