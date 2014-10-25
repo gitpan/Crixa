@@ -1,6 +1,6 @@
 package Crixa;
 # ABSTRACT: A Cleaner API for Net::AMQP::RabbitMQ
-$Crixa::VERSION = '0.06'; # TRIAL
+$Crixa::VERSION = '0.07';
 use Moose;
 use namespace::autoclean;
 
@@ -56,7 +56,7 @@ Crixa - A Cleaner API for Net::AMQP::RabbitMQ
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

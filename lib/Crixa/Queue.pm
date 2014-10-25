@@ -1,6 +1,6 @@
 package Crixa::Queue;
 # ABSTRACT: A Crixa Queue
-$Crixa::Queue::VERSION = '0.06'; # TRIAL
+$Crixa::Queue::VERSION = '0.07';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
@@ -10,9 +10,10 @@ use Crixa::Message;
 with qw(Crixa::Engine);
 
 has name => (
-    isa    => 'Str',
-    reader => 'name',
-    writer => '_name'
+    isa       => 'Str',
+    reader    => 'name',
+    writer    => '_name',
+    predicate => '_has_name',
 );
 
 has channel => (
@@ -48,13 +49,31 @@ has auto_delete => (
 sub BUILD {
     my $self = shift;
 
-    my $name = $self->_mq->queue_declare(
+    my $name = $self->_queue_declare;
+    return if $self->_has_name;
+    $self->_name($name);
+}
+
+sub _queue_declare {
+    my $self    = shift;
+    my $passive = shift;
+
+    my $props = $self->_props;
+    $props->{passive} = 1 if $passive;
+
+    return $self->_mq->queue_declare(
         $self->channel->id,
         $self->name // '',
-        $self->_props,
+        $props,
     );
-    return if $self->name;
-    $self->_name($name);
+}
+
+sub message_count {
+    my $self = shift;
+
+    my ( undef, $message_count, undef ) = $self->_queue_declare('passive');
+
+    return $message_count;
 }
 
 sub check_for_message {
@@ -131,7 +150,7 @@ Crixa::Queue - A Crixa Queue
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 DESCRIPTION
 
@@ -223,6 +242,10 @@ callback returns.
 
 This takes the same parameters as the C<check_for_message> method after the
 callback.
+
+=head2 $queue->message_count
+
+Returns the number of messages waiting in the queue.
 
 =head2 $queue->bind(...)
 

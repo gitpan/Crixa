@@ -1,3 +1,9 @@
+0.07 2014-10-25
+
+  [ENHANCEMENTS]
+
+  * Added a Crixa::Queue->message_count method.
+
 0.06 2014-10-01
 
   [BACKWARDS INCOMPATIBILITIES]
@@ -34,11 +40,11 @@
   * Added complete documentation for every class. The docs try to explain
     RabbitMQ concepts wherever appropriate.
 
-  * Added a Crixa::Exchange->delete method
+  * Added a Crixa::Exchange->delete method.
 
-  * Added a Crixa::Queue->delete method
+  * Added a Crixa::Queue->delete method.
 
-  * Added a Crixa::Queue->bind method
+  * Added a Crixa::Queue->bind method.
 
   * All the settings that can be passed to the constructor for Exchange &
     Queue objects are now available as object attributes. This includes things

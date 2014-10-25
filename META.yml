@@ -18,7 +18,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
+generated_by: 'Dist::Zilla version 5.021, CPAN::Meta::Converter version 2.142690'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -33,6 +33,6 @@ requires:
 resources:
   bugtracker: https://github.com/Tamarou/Crixa/issues
   repository: git://github.com/Tamarou/Crixa.git
-version: '0.06'
+version: '0.07'
 x_contributors:
   - 'Torsten Raudssus <torsten@raudss.us>'

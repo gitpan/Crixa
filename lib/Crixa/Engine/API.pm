@@ -1,6 +1,6 @@
 package Crixa::Engine::API;
 # ABSTRACT: For internal use only
-$Crixa::Engine::API::VERSION = '0.06'; # TRIAL
+$Crixa::Engine::API::VERSION = '0.07';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -18,7 +18,7 @@ Crixa::Engine::API - For internal use only
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 DESCRIPTION
 

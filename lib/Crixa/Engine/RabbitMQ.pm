@@ -1,6 +1,6 @@
 package Crixa::Engine::RabbitMQ;
 # ABSTRACT: For internal use only
-$Crixa::Engine::RabbitMQ::VERSION = '0.06'; # TRIAL
+$Crixa::Engine::RabbitMQ::VERSION = '0.07';
 use Moose;
 use namespace::autoclean;
 
@@ -33,7 +33,7 @@ Crixa::Engine::RabbitMQ - For internal use only
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 DESCRIPTION
 
