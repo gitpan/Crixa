@@ -1,6 +1,6 @@
 package Crixa::Message;
 # ABSTRACT: A Crixa Message
-$Crixa::Message::VERSION = '0.07';
+$Crixa::Message::VERSION = '0.08';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
@@ -84,6 +84,8 @@ sub ack {
     $self->channel->ack( $self->delivery_tag );
 }
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 
 __END__
@@ -96,7 +98,7 @@ Crixa::Message - A Crixa Message
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 DESCRIPTION
 
@@ -206,7 +208,7 @@ Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Chris Prather.
+This software is copyright (c) 2012 - 2014 by Chris Prather.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

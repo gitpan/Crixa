@@ -1,18 +1,14 @@
 package Crixa;
+# git description: 0.07-8-g2aa58e1
+
 # ABSTRACT: A Cleaner API for Net::AMQP::RabbitMQ
-$Crixa::VERSION = '0.07';
+$Crixa::VERSION = '0.08';
 use Moose;
 use namespace::autoclean;
 
 use Crixa::Channel;
 
 with qw(Crixa::Engine);
-
-sub connect {
-    my $o = shift->new(@_);
-    $o->_connect_mq($o);
-    return $o;
-}
 
 has host => ( isa => 'Str', is => 'ro', required => 1, );
 
@@ -29,6 +25,12 @@ has _channel_id => (
         reset_channel_id   => 'reset',
     }
 );
+
+sub connect {
+    my $self = shift->new(@_);
+    $self->_connect_mq($self);
+    return $self;
+}
 
 sub new_channel {
     my $self = shift;
@@ -56,7 +58,7 @@ Crixa - A Cleaner API for Net::AMQP::RabbitMQ
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
@@ -179,7 +181,7 @@ Torsten Raudssus <torsten@raudss.us>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Chris Prather.
+This software is copyright (c) 2012 - 2014 by Chris Prather.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

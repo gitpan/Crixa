@@ -1,3 +1,11 @@
+0.08 2014-11-12
+
+  [BUG FIXES]
+
+  * Almost none of the Crixa classes were made immutable, which makes them a
+    lot slower to construct. This is particularly bad for the Crixa::Message
+    class.
+
 0.07 2014-10-25
 
   [ENHANCEMENTS]
@@ -20,8 +28,9 @@
     you should create a channel and use that to create queues and exchanges.
 
   * Removed the Crixa::Channel->publish method. Use Crixa::Exchange objects to
-    publish methods instead. If you really want to publish without an exchange
-    name, you can create an exchange object with an empty string as its name.
+    publish messages instead. If you really want to publish without an
+    exchange name, you can create an exchange object with an empty string as
+    its name.
 
   * Removed the Crixa::Queue->publish method. This really doesn't make sense,
     since you can't publish to queues. This method would only have worked with

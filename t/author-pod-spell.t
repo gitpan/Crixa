@@ -18,6 +18,10 @@ use Pod::Wordlist;
 add_stopwords(<DATA>);
 all_pod_files_spelling_ok( qw( bin lib  ) );
 __DATA__
+DROLSKY
+DROLSKY's
+Rolsky
+Rolsky's
 AMQP
 GitHub
 QoS
@@ -38,7 +42,6 @@ Chris
 Prather
 chris
 Dave
-Rolsky
 autarch
 Torsten
 Raudssus

@@ -26,15 +26,20 @@ my @files = (
     't/00-compile.t',
     't/00-report-prereqs.dd',
     't/00-report-prereqs.t',
+    't/author-eol.t',
     't/author-no-tabs.t',
     't/author-pod-spell.t',
     't/channels.t',
     't/lib/Test/Crixa.pm',
     't/live/basic.t',
     't/mocked.t',
-    't/release-eol.t',
+    't/release-cpan-changes.t',
     't/release-pod-coverage.t',
-    't/release-pod-syntax.t'
+    't/release-pod-linkcheck.t',
+    't/release-pod-no404s.t',
+    't/release-pod-syntax.t',
+    't/release-portability.t',
+    't/release-synopsis.t'
 );
 
 notabs_ok($_) foreach @files;

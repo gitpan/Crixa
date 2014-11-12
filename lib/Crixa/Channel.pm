@@ -1,6 +1,6 @@
 package Crixa::Channel;
 # ABSTRACT: A Crixa Channel
-$Crixa::Channel::VERSION = '0.07';
+$Crixa::Channel::VERSION = '0.08';
 use Moose;
 use namespace::autoclean;
 
@@ -34,6 +34,8 @@ sub queue {
 
 sub ack { $_[0]->_mq->ack( shift->id, @_ ) }
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 
 __END__
@@ -46,7 +48,7 @@ Crixa::Channel - A Crixa Channel
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 DESCRIPTION
 
@@ -148,7 +150,7 @@ Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Chris Prather.
+This software is copyright (c) 2012 - 2014 by Chris Prather.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
