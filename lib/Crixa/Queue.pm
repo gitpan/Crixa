@@ -1,13 +1,13 @@
 package Crixa::Queue;
 # ABSTRACT: A Crixa Queue
-$Crixa::Queue::VERSION = '0.08';
+$Crixa::Queue::VERSION = '0.09';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
 
 use Crixa::Message;
 
-with qw(Crixa::Engine);
+with qw(Crixa::HasMQ);
 
 has name => (
     isa       => 'Str',
@@ -152,7 +152,7 @@ Crixa::Queue - A Crixa Queue
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 DESCRIPTION
 

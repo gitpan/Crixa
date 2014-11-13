@@ -17,10 +17,8 @@ use Test::NoTabs;
 my @files = (
     'lib/Crixa.pm',
     'lib/Crixa/Channel.pm',
-    'lib/Crixa/Engine.pm',
-    'lib/Crixa/Engine/API.pm',
-    'lib/Crixa/Engine/RabbitMQ.pm',
     'lib/Crixa/Exchange.pm',
+    'lib/Crixa/HasMQ.pm',
     'lib/Crixa/Message.pm',
     'lib/Crixa/Queue.pm',
     't/00-compile.t',

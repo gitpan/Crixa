@@ -22,6 +22,7 @@
       },
       "develop" : {
          "requires" : {
+            "Pod::Coverage::Moose" : "0",
             "Pod::Coverage::TrustPod" : "0",
             "Test::CPAN::Changes" : "0.19",
             "Test::EOL" : "0",
@@ -37,6 +38,7 @@
          "requires" : {
             "Moose" : "0",
             "Moose::Role" : "0",
+            "Moose::Util::TypeConstraints" : "0",
             "Net::AMQP::RabbitMQ" : "0",
             "namespace::autoclean" : "0",
             "perl" : "v5.10.0"
@@ -47,6 +49,7 @@
             "CPAN::Meta" : "2.120900"
          },
          "requires" : {
+            "Crixa::Engine::RabbitMQ" : "0",
             "Exporter" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
@@ -63,35 +66,27 @@
    "provides" : {
       "Crixa" : {
          "file" : "lib/Crixa.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       },
       "Crixa::Channel" : {
          "file" : "lib/Crixa/Channel.pm",
-         "version" : "0.08"
-      },
-      "Crixa::Engine" : {
-         "file" : "lib/Crixa/Engine.pm",
-         "version" : "0.08"
-      },
-      "Crixa::Engine::API" : {
-         "file" : "lib/Crixa/Engine/API.pm",
-         "version" : "0.08"
-      },
-      "Crixa::Engine::RabbitMQ" : {
-         "file" : "lib/Crixa/Engine/RabbitMQ.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       },
       "Crixa::Exchange" : {
          "file" : "lib/Crixa/Exchange.pm",
-         "version" : "0.08"
+         "version" : "0.09"
+      },
+      "Crixa::HasMQ" : {
+         "file" : "lib/Crixa/HasMQ.pm",
+         "version" : "0.09"
       },
       "Crixa::Message" : {
          "file" : "lib/Crixa/Message.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       },
       "Crixa::Queue" : {
          "file" : "lib/Crixa/Queue.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       }
    },
    "release_status" : "stable",
@@ -107,7 +102,7 @@
          "web" : "https://github.com/Tamarou/Crixa"
       }
    },
-   "version" : "0.08",
+   "version" : "0.09",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
@@ -230,7 +225,7 @@
                }
             },
             "name" : "@DROLSKY/stale modules, release",
-            "version" : "0.029"
+            "version" : "0.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
@@ -613,7 +608,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "v0.08",
+                  "tag" : "v0.09",
                   "tag_format" : "v%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -640,6 +635,17 @@
             },
             "name" : "@DROLSKY/Git::Push",
             "version" : "2.025"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "requires"
+               }
+            },
+            "name" : "DevelopRequires",
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

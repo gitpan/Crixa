@@ -1,11 +1,11 @@
 package Crixa::Exchange;
 # ABSTRACT: A Crixa Exchange
-$Crixa::Exchange::VERSION = '0.08';
+$Crixa::Exchange::VERSION = '0.09';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
 
-with qw(Crixa::Engine);
+with qw(Crixa::HasMQ);
 
 has name => ( isa => 'Str', is => 'ro', required => 1 );
 
@@ -13,7 +13,6 @@ has channel => (
     isa      => 'Crixa::Channel',
     is       => 'ro',
     required => 1,
-    handles  => { queue => 'queue' },
 );
 
 has exchange_type => (
@@ -49,20 +48,19 @@ sub BUILD {
     );
 }
 
-around queue => sub {
-    my $next     = shift;
-    my $self     = shift;
-    my $args     = @_ == 1 ? $_[0] : {@_};
+sub queue {
+    my $self = shift;
+    my $args = @_ == 1 ? $_[0] : {@_};
 
     my $routing = delete $args->{routing_keys} // [];
-    my $q        = $self->$next($args);
+    my $q = $self->channel->queue($args);
 
     for my $key (@$routing) {
         $q->bind( { exchange => $self->name, routing_key => $key } );
     }
 
     return $q;
-};
+}
 
 sub publish {
     my $self = shift;
@@ -113,7 +111,7 @@ Crixa::Exchange - A Crixa Exchange
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 DESCRIPTION
 

@@ -1,13 +1,14 @@
 package Crixa::Channel;
+$Crixa::Channel::VERSION = '0.09';
 # ABSTRACT: A Crixa Channel
-$Crixa::Channel::VERSION = '0.08';
+
 use Moose;
 use namespace::autoclean;
 
 use Crixa::Queue;
 use Crixa::Exchange;
 
-with qw(Crixa::Engine);
+with qw(Crixa::HasMQ);
 
 has id => ( isa => 'Str', is => 'ro', required => 1 );
 
@@ -15,7 +16,11 @@ sub BUILD { $_[0]->_mq->channel_open( $_[0]->id ); }
 
 sub exchange {
     my $self = shift;
-    Crixa::Exchange->new( @_, engine => $self->engine, channel => $self );
+    Crixa::Exchange->new(
+        @_,
+        channel => $self,
+        _mq     => $self->_mq,
+    );
 }
 
 sub basic_qos {
@@ -27,7 +32,7 @@ sub basic_qos {
 sub queue {
     my $self = shift;
     my $args = @_ == 1 ? shift : {@_};
-    $args->{engine}  = $self->engine;
+    $args->{_mq}     = $self->_mq;
     $args->{channel} = $self;
     return Crixa::Queue->new($args);
 }
@@ -48,7 +53,7 @@ Crixa::Channel - A Crixa Channel
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 DESCRIPTION
 

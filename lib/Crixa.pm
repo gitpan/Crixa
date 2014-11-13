@@ -1,14 +1,23 @@
 package Crixa;
-# git description: 0.07-8-g2aa58e1
+# git description: v0.08-15-g87a261d
 
 # ABSTRACT: A Cleaner API for Net::AMQP::RabbitMQ
-$Crixa::VERSION = '0.08';
+$Crixa::VERSION = '0.09';
 use Moose;
 use namespace::autoclean;
 
 use Crixa::Channel;
+use Net::AMQP::RabbitMQ;
 
-with qw(Crixa::Engine);
+with qw(Crixa::HasMQ);
+
+has '+_mq' => (
+    init_arg => 'mq',
+    required => 0,
+    lazy     => 1,
+    builder  => '_build_mq',
+    handles  => [qw( connected disconnect )],
+);
 
 has host => ( isa => 'Str', is => 'ro', required => 1, );
 
@@ -26,23 +35,37 @@ has _channel_id => (
     }
 );
 
+sub _build_mq { Net::AMQP::RabbitMQ->new; }
+
 sub connect {
     my $self = shift->new(@_);
     $self->_connect_mq($self);
     return $self;
 }
 
+sub _connect_mq {
+    my ( $self, $crixa ) = @_;
+
+    my %args;
+    for (qw( user password port )) {
+        $args{$_} = $crixa->$_ if defined $crixa->$_;
+    }
+    $self->_mq->connect( $crixa->host, \%args );
+}
+
 sub new_channel {
     my $self = shift;
 
     return Crixa::Channel->new(
-        id     => $self->_next_channel_id,
-        engine => $self->engine,
+        id  => $self->_next_channel_id,
+        _mq => $self->_mq,
     );
 }
 
-sub disconnect { shift->_mq->disconnect(); }
-sub DEMOLISH   { shift->disconnect; }
+sub DEMOLISH {
+    my $self = shift;
+    $self->disconnect if $self->_mq && $self->_mq->connected;
+}
 
 __PACKAGE__->meta->make_immutable;
 
@@ -58,7 +81,7 @@ Crixa - A Cleaner API for Net::AMQP::RabbitMQ
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -119,6 +142,21 @@ An optional username.
 
 An optional password.
 
+=item mq => $mq
+
+This is an optional parameter which can contain an object which implements the
+C<Net::AMQP::RabbitMQ> interface.
+
+Normally this will be created as needed but you can pass a
+L<Test::Net::RabbitMQ> object instead so you can write tests for code that
+uses Crixa without actually having a rabbitmq server running.
+
+Note that L<Test::Net::RabbitMQ> does not (as of version 0.10) implement the
+entire L<Net::AMQP::RabbitMQ> interface so some Crixa methods may blow up with
+L<Test::Net::RabbitMQ>.
+
+See the section on L</MOCKING> for more details.
+
 =back
 
 =head2 $crixa->new_channel
@@ -143,6 +181,84 @@ Returns the user passed to the constructor, if any.
 =head2 $crixa->password
 
 Returns the password passed to the constructor, if any.
+
+=head2 $crixa->connected
+
+This returns true if the underlying mq object thinks it is connected.
+
+=head1 MOCKING
+
+If you are testing code that uses Crixa, you may want to mock out the use of
+an actual rabbitmq server with something that is a little simpler to test. In
+that case, you can pass a L<Test::Net::RabbitMQ> object to the C<<
+Crixa->connect >> method:
+
+    my $test_mq = Test::Net::RabbitMQ->new;
+    my $crixa   = Crixa->connect(
+        host => 'irrelevant',
+        mq   => $test_mq,
+    );
+
+Note that if you are publishing and consuming messages, this all must happen
+in a single process B<and a single L<Test::Net::RabbitMQ> object> in order for
+this mocking to work.
+
+If the code that publishes messages makes a separate Crixa object from the one
+you use to test those messages, you need to be careful to share the same
+L<Test::Net::RabbitMQ> object. Also, since the Crixa object calls its
+C<disconnect()> method when it goes out of scope, you may need to reconnect
+the L<Test::Net::RabbitMQ> object or it will die when you call methods on it.
+
+Here's an example:
+
+    my $test_mq = Test::Net::RabbitMQ->new;
+    test_messages($test_mq) :;
+
+    sub test_messages {
+        my $mq    = shift;
+        my $crixa = Crixa->connect(
+            host => 'irrelevant',
+            mq   => $test_mq,
+        );
+
+        publish($test_mq);
+
+        # This will die!
+        my @messages = $crixa->channel->queue(...)->check_for_messages;
+    }
+
+    sub publish {
+        my $mq    = shift;
+        my $crixa = Crixa->connect(
+            host => 'irrelevant',
+            mq   => $test_mq,
+        );
+
+        # publish some messages
+
+        # When the sub exits the $crixa object calls disconnect() on itself.
+    }
+
+We can fix this by adding an extra "safety" call to connect the C<$test_mq>
+object in the C<test_messages()> sub:
+
+    sub test_messages {
+        my $mq    = shift;
+        my $crixa = Crixa->connect(
+            host => 'irrelevant',
+            mq   => $test_mq,
+        );
+
+        publish($test_mq);
+
+        $test_mq->connect unless $test_mq->connected;
+
+        # This will die!
+        my @messages = $crixa->channel->queue(...)->check_for_messages;
+    }
+
+Of course, this is a very artificial example, but in real code you may come
+across this problem.
 
 =head1 SUPPORT
 

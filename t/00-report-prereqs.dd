@@ -6,6 +6,7 @@ do { my $x = {
                       },
        'develop' => {
                       'requires' => {
+                                      'Pod::Coverage::Moose' => '0',
                                       'Pod::Coverage::TrustPod' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::EOL' => '0',
@@ -21,6 +22,7 @@ do { my $x = {
                       'requires' => {
                                       'Moose' => '0',
                                       'Moose::Role' => '0',
+                                      'Moose::Util::TypeConstraints' => '0',
                                       'Net::AMQP::RabbitMQ' => '0',
                                       'namespace::autoclean' => '0',
                                       'perl' => 'v5.10.0'
@@ -31,6 +33,7 @@ do { my $x = {
                                      'CPAN::Meta' => '2.120900'
                                    },
                    'requires' => {
+                                   'Crixa::Engine::RabbitMQ' => '0',
                                    'Exporter' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',

@@ -25,13 +25,16 @@ Rolsky's
 AMQP
 GitHub
 QoS
+RabbitMQ
 ack
 acks
 api
 hostname
 metadata
+mq
 prefetched
 prefetching
+rabbitmq
 timestamp
 undeliverable
 unroutable
@@ -50,8 +53,6 @@ lib
 Crixa
 Message
 Exchange
-Engine
-RabbitMQ
 Queue
 Channel
-API
+HasMQ

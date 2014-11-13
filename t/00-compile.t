@@ -6,15 +6,13 @@ use warnings;
 
 use Test::More;
 
-plan tests => 8 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+plan tests => 6 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 my @module_files = (
     'Crixa.pm',
     'Crixa/Channel.pm',
-    'Crixa/Engine.pm',
-    'Crixa/Engine/API.pm',
-    'Crixa/Engine/RabbitMQ.pm',
     'Crixa/Exchange.pm',
+    'Crixa/HasMQ.pm',
     'Crixa/Message.pm',
     'Crixa/Queue.pm'
 );

@@ -23,10 +23,12 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Moose" => 0,
     "Moose::Role" => 0,
+    "Moose::Util::TypeConstraints" => 0,
     "Net::AMQP::RabbitMQ" => 0,
     "namespace::autoclean" => 0
   },
   "TEST_REQUIRES" => {
+    "Crixa::Engine::RabbitMQ" => 0,
     "Exporter" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
@@ -38,7 +40,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.08",
+  "VERSION" => "0.09",
   "test" => {
     "TESTS" => "t/*.t t/live/*.t"
   }
@@ -46,6 +48,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Crixa::Engine::RabbitMQ" => 0,
   "Exporter" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
@@ -53,6 +56,7 @@ my %FallbackPrereqs = (
   "IPC::Open3" => 0,
   "Moose" => 0,
   "Moose::Role" => 0,
+  "Moose::Util::TypeConstraints" => 0,
   "Net::AMQP::RabbitMQ" => 0,
   "Test::More" => "0.98",
   "Test::Net::RabbitMQ" => "0.10",
