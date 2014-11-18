@@ -36,11 +36,12 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => "0.98",
     "Test::Net::RabbitMQ" => "0.10",
+    "Test::Warnings" => 0,
     "lib" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.09",
+  "VERSION" => "0.10",
   "test" => {
     "TESTS" => "t/*.t t/live/*.t"
   }
@@ -60,6 +61,7 @@ my %FallbackPrereqs = (
   "Net::AMQP::RabbitMQ" => 0,
   "Test::More" => "0.98",
   "Test::Net::RabbitMQ" => "0.10",
+  "Test::Warnings" => 0,
   "lib" => 0,
   "namespace::autoclean" => 0,
   "strict" => 0,

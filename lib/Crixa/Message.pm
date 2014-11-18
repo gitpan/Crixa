@@ -1,6 +1,6 @@
 package Crixa::Message;
 # ABSTRACT: A Crixa Message
-$Crixa::Message::VERSION = '0.09';
+$Crixa::Message::VERSION = '0.10';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
@@ -96,7 +96,7 @@ Crixa::Message - A Crixa Message
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DESCRIPTION
 

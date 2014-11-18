@@ -1,5 +1,5 @@
 package Crixa::Channel;
-$Crixa::Channel::VERSION = '0.09';
+$Crixa::Channel::VERSION = '0.10';
 # ABSTRACT: A Crixa Channel
 
 use Moose;
@@ -53,7 +53,7 @@ Crixa::Channel - A Crixa Channel
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DESCRIPTION
 

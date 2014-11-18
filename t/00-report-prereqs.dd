@@ -41,6 +41,7 @@ do { my $x = {
                                    'IPC::Open3' => '0',
                                    'Test::More' => '0.98',
                                    'Test::Net::RabbitMQ' => '0.10',
+                                   'Test::Warnings' => '0',
                                    'lib' => '0',
                                    'strict' => '0',
                                    'warnings' => '0'

@@ -1,6 +1,6 @@
 package Crixa::Queue;
 # ABSTRACT: A Crixa Queue
-$Crixa::Queue::VERSION = '0.09';
+$Crixa::Queue::VERSION = '0.10';
 use 5.10.0;
 use Moose;
 use namespace::autoclean;
@@ -152,7 +152,7 @@ Crixa::Queue - A Crixa Queue
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DESCRIPTION
 

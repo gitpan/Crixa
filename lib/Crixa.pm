@@ -1,8 +1,8 @@
 package Crixa;
-# git description: v0.08-15-g87a261d
+# git description: v0.09-5-g0dc55d3
 
 # ABSTRACT: A Cleaner API for Net::AMQP::RabbitMQ
-$Crixa::VERSION = '0.09';
+$Crixa::VERSION = '0.10';
 use Moose;
 use namespace::autoclean;
 
@@ -16,7 +16,7 @@ has '+_mq' => (
     required => 0,
     lazy     => 1,
     builder  => '_build_mq',
-    handles  => [qw( connected disconnect )],
+    handles  => [qw( disconnect )],
 );
 
 has host => ( isa => 'Str', is => 'ro', required => 1, );
@@ -62,9 +62,19 @@ sub new_channel {
     );
 }
 
+sub is_connected {
+    my $self = shift;
+
+    return
+          $self->_mq->can('is_connected') ? $self->_mq->is_connected
+        : $self->_mq->can('connected')    ? $self->_mq->connected
+        : die
+        'The underlying mq object does not have an is_connected or connected method!';
+}
+
 sub DEMOLISH {
     my $self = shift;
-    $self->disconnect if $self->_mq && $self->_mq->connected;
+    $self->disconnect if $self->_mq && $self->is_connected;
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -81,7 +91,7 @@ Crixa - A Cleaner API for Net::AMQP::RabbitMQ
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -182,7 +192,7 @@ Returns the user passed to the constructor, if any.
 
 Returns the password passed to the constructor, if any.
 
-=head2 $crixa->connected
+=head2 $crixa->is_connected
 
 This returns true if the underlying mq object thinks it is connected.
 

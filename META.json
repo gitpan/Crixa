@@ -57,6 +57,7 @@
             "IPC::Open3" : "0",
             "Test::More" : "0.98",
             "Test::Net::RabbitMQ" : "0.10",
+            "Test::Warnings" : "0",
             "lib" : "0",
             "strict" : "0",
             "warnings" : "0"
@@ -66,27 +67,27 @@
    "provides" : {
       "Crixa" : {
          "file" : "lib/Crixa.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Crixa::Channel" : {
          "file" : "lib/Crixa/Channel.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Crixa::Exchange" : {
          "file" : "lib/Crixa/Exchange.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Crixa::HasMQ" : {
          "file" : "lib/Crixa/HasMQ.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Crixa::Message" : {
          "file" : "lib/Crixa/Message.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Crixa::Queue" : {
          "file" : "lib/Crixa/Queue.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -102,7 +103,7 @@
          "web" : "https://github.com/Tamarou/Crixa"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
@@ -140,7 +141,9 @@
                   "exclude_filename" : [
                      "README.md",
                      "cpanfile",
-                     "LICENSE"
+                     "Makefile.PL",
+                     "LICENSE",
+                     "Build.PL"
                   ],
                   "exclude_match" : [],
                   "follow_symlinks" : "0",
@@ -225,7 +228,7 @@
                }
             },
             "name" : "@DROLSKY/stale modules, release",
-            "version" : "0.030"
+            "version" : "0.031"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
@@ -320,12 +323,12 @@
          {
             "class" : "Dist::Zilla::Plugin::DROLSKY::Contributors",
             "name" : "@DROLSKY/DROLSKY::Contributors",
-            "version" : "0.25"
+            "version" : "0.26"
          },
          {
             "class" : "Dist::Zilla::Plugin::DROLSKY::License",
             "name" : "@DROLSKY/DROLSKY::License",
-            "version" : "0.25"
+            "version" : "0.26"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch",
@@ -515,7 +518,7 @@
                }
             },
             "name" : "@DROLSKY/Test::EOL",
-            "version" : "0.15"
+            "version" : "0.16"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::NoTabs",
@@ -560,11 +563,13 @@
                },
                "Dist::Zilla::Role::Git::DirtyFiles" : {
                   "allow_dirty" : [
-                     "Changes",
+                     "README.md",
                      "cpanfile",
-                     "CONTRIBUTING.md",
+                     "Makefile.PL",
                      "LICENSE",
-                     "README.md"
+                     "Build.PL",
+                     "Changes",
+                     "CONTRIBUTING.md"
                   ],
                   "allow_dirty_match" : [],
                   "changelog" : "Changes"
@@ -586,11 +591,13 @@
                },
                "Dist::Zilla::Role::Git::DirtyFiles" : {
                   "allow_dirty" : [
-                     "Changes",
+                     "README.md",
                      "cpanfile",
-                     "CONTRIBUTING.md",
+                     "Makefile.PL",
                      "LICENSE",
-                     "README.md"
+                     "Build.PL",
+                     "Changes",
+                     "CONTRIBUTING.md"
                   ],
                   "allow_dirty_match" : [],
                   "changelog" : "Changes"
@@ -608,7 +615,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "v0.09",
+                  "tag" : "v0.10",
                   "tag_format" : "v%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

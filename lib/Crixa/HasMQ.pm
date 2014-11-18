@@ -1,6 +1,6 @@
 package Crixa::HasMQ;
 # ABSTRACT: For internal use only
-$Crixa::HasMQ::VERSION = '0.09';
+$Crixa::HasMQ::VERSION = '0.10';
 use Moose::Role;
 use namespace::autoclean;
 
@@ -45,7 +45,7 @@ Crixa::HasMQ - For internal use only
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DESCRIPTION
 

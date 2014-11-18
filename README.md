@@ -4,7 +4,7 @@ Crixa - A Cleaner API for Net::AMQP::RabbitMQ
 
 # VERSION
 
-version 0.09
+version 0.10
 
 # SYNOPSIS
 
@@ -101,7 +101,7 @@ Returns the user passed to the constructor, if any.
 
 Returns the password passed to the constructor, if any.
 
-## $crixa->connected
+## $crixa->is\_connected
 
 This returns true if the underlying mq object thinks it is connected.
 
